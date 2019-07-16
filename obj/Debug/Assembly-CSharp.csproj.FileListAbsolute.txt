@@ -1,0 +1,2 @@
+V:\107-僑光-多遊-王佑魁\專案區\03-unity存放區\Bricks\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+V:\107-僑光-多遊-王佑魁\專案區\03-unity存放區\Bricks\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
