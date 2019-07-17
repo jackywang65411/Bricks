@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public State GameState;
     public static GameManager Instance = null;
     private bool LevelOneLoaded;
+    public int BrickCount;
 
     public void Awake()
     {
@@ -32,7 +33,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         LevelOneLoaded = false;
-        
+        BrickCount = 0;
+
+
 
     }
     void Update()
@@ -51,15 +54,19 @@ public class GameManager : MonoBehaviour
         {
             case State.GameMenu:
                 LevelOneLoaded = false;
+                BrickCount = 0;
                 break;
             case State.LevelOne:
                     LoadLevelOne();
+                if (BrickCount <=0)
+                {
+                    GameState = State.Gameover;
+                }
+                
                 break;
             case State.Pauce:
-                Time.timeScale = 0;
                 break;
             case State.Gameover:
-                
                 break;
         }
     }
@@ -72,12 +79,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < 8; i++)
             {
                 Instantiate(Resources.Load("Bricks"), new Vector3(-7 + i * 2, 3, 0), Quaternion.identity);
+                BrickCount++;
             }
             LevelOneLoaded = true;
             
         }
-        
     }
-
 
 }

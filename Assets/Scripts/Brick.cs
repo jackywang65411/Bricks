@@ -11,6 +11,7 @@ public class Brick : MonoBehaviour
         {
             transform.gameObject.SetActive(false);
             Score.ScoreValue += 10;
+            GameManager.Instance.BrickCount--;
         }
     }
 }
